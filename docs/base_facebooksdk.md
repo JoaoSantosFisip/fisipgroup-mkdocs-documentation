@@ -1,5 +1,5 @@
 ## OpenSSL not found
-<p><img alt="" src="/images/base_issues_facebook_2.png" /></p>
+![keystore](/images/base_issues_facebook_2.png)
 
 ## Debug.keystore
-<p><img alt="" src="/images/base_issues_facebook_1.png" /></p>
+![keystore](/images/base_issues_facebook_1.png)
