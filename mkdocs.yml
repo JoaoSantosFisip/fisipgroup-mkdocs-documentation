@@ -29,6 +29,10 @@ nav:
     - Publish:
       - Android: base_publish_android.md
     - MKDocs: base_mkdocs.md
+  
+  - Common Issues:
+    - Facebook SDK Integration: base_facebooksdk.md
+  
   - Custom Packages:
     - Tools: custompackage_tools.md
     - Addressables: 'custompackage_addressables.md'
