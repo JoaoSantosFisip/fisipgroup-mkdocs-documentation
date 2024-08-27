@@ -18,6 +18,7 @@ theme:
         name: Switch to light mode
 
 nav:
+  - index.md
   - Base:
     - Links And References: base_help-links.md
     - Publish:
