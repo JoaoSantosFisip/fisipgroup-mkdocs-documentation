@@ -3,6 +3,11 @@ repo_url: https://github.com/JoaoSantosFisip/fisipgroup-mkdocs-documentation
 
 theme: 
   name: material
+  features:
+    - search.suggest
+    - search.highlight
+    - content.code.annotation
+    - content.code.copy
   palette:
   # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
@@ -23,6 +28,7 @@ nav:
     - Links And References: base_help-links.md
     - Publish:
       - Android: base_publish_android.md
+    - MKDocs: base_mkdocs.md
   - Custom Packages:
     - Tools: custompackage_tools.md
     - Addressables: 'custompackage_addressables.md'
