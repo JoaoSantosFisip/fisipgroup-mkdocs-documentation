@@ -4,6 +4,7 @@ repo_url: https://github.com/JoaoSantosFisip/fisipgroup-mkdocs-documentation
 theme: 
   name: material
   features:
+    - navigation.sections
     - search.suggest
     - search.highlight
     - content.code.annotation
@@ -25,21 +26,35 @@ theme:
 markdown_extensions:
   - attr_list
   - md_in_html
+  - sane_lists
 
-nav:
-  - index.md
-  - Base:
-    - Links And References: base_help-links.md
-    - Publish:
-      - Android: base_publish_android.md
-    - MKDocs: base_mkdocs.md
-  
+nav: 
+  - Home: index.md
+  - How to use MKDocs: mkdocs.md
+  - Guides:
+      - Links And References: base_help-links.md
+      - How to publish:
+        - Github: base_publish_github.md
+        - Android: base_publish_android.md
+        - IOS: base_publish_ios.md
+      - How to install External Dependency Manager for Unity: base_how_to_edmfu.md
   - Common Issues:
     - Facebook SDK Integration: base_facebooksdk.md
-  
   - Custom Packages:
-    - Tools: custompackage_tools.md
-    - Addressables: 'custompackage_addressables.md'
-    - CloudSave: 'custompackage_cloudsave.md'
-    - Notifications: 'custompackage_notifications.md'
-    - AppUpdate: 'custompackage_appupdate.md'
+    - Home: custompackage.md
+    - Guides:
+      - How to add package via git URL: custompackage_guide_giturl.md
+      - How to add package via tarball: custompackage_guide_tarball.md
+      - How to update package: custompackage_guide_update.md
+    # - Tools: custompackage_tools.md
+    - Addressables:
+      - Setup: custompackage_addressables_setup.md
+      - How to Update Addressables: custompackage_addressables_update.md
+      - Recommended Settings: custompackage_addressables_settings.md
+      - Simulate In Editor: custompackage_addressables_simulate.md
+    # - CloudSave: custompackage_cloudsave.md
+    # - Notifications: custompackage_notifications.md
+    # - AppUpdate: custompackage_appupdate.md
+  #- Games:
+   # - MowerMayhem: games_mowermayhem.md
+    #- Jump: games_jump.md

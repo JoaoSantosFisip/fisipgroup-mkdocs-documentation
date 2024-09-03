@@ -1,6 +1,6 @@
 # About
 
-Through development several API/SDK/Tools needed to be installed/researched, bellow you will find all the tutorial and references that were used during the development of our games.
+Through development several API/SDK/Tools needed to be installed/researched, bellow you will find all the tutorial and references that were used during the development of our content.
 
 ## In App Purchases
 - [IAP IN UNITY Easy Integration for BEGINNER! 2023 (UNITY, GOOGLE PLAY AND TESTING!!)](https://www.youtube.com/watch?v=PthFk5je350)
@@ -30,6 +30,10 @@ Through development several API/SDK/Tools needed to be installed/researched, bel
 
 ## Adobe Sounds
 - [Adobe Audition SFX](https://www.adobe.com/products/audition/offers/adobeauditiondlcsfx.html)
+
+## External Dependency Manager for Unity
+- [Repository](https://github.com/googlesamples/unity-jar-resolver)
+- [Unity Developer Archives](https://developers.google.com/unity/archive#external_dependency_manager_for_unity)
 
 ## MKDocs 
 - [How To Create STUNNING Code Documentation With MkDocs Material Theme](https://www.youtube.com/watch?v=Q-YA_dA8C20)

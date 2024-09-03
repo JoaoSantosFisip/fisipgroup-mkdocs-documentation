@@ -1,6 +1,13 @@
 # MKDocs 
 The projects repo can be found here: <a href="https://github.com/JoaoSantosFisip/fisipgroup-mkdocs-documentation">Github Repo</a>
 
+Documentation based on this tutorial: [How To Create STUNNING Code Documentation With MkDocs Material Theme](https://www.youtube.com/watch?v=Q-YA_dA8C20)
+
+For full MKDocs documentation visit [mkdocs.org](https://www.mkdocs.org).
+
+## About
+We are using MKdocs to create this documentation page, here's the necessary steps:
+
 ## How to start
 1. Open Mkdocs project with Visual Studio Code.
 2. Open a new terminal `Terminal -> New Terminal`
