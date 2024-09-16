@@ -1,5 +1,4 @@
 # Setup
-## About
 For the `Addressables Custom Package` to work a small setup is necessary, here's the steps:
 
 [Github Repository](https://github.com/JoaoSantosFisip/fisipgroup-custom-package-addressables)
@@ -11,7 +10,7 @@ For the `Addressables Custom Package` to work a small setup is necessary, here's
     - Addressables.
     - Fisipgroup Tools Custom Package.
 
-More info on how to add custom packages here:  [Custom Packages Home](https://joaosantosfisip.github.io/fisipgroup-mkdocs-documentation/custompackage/);
+More info on how to add custom packages here:  [Add package from git URL](https://joaosantosfisip.github.io/fisipgroup-mkdocs-documentation/custompackage_guide_giturl/);
 
 ## Set recommended settings
 To make sure the addressables work properly we recommend using the recommended settings.

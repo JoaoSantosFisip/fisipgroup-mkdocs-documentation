@@ -1,8 +1,11 @@
-site_name: FisipGroup Documentation
+site_name: Documentation
 repo_url: https://github.com/JoaoSantosFisip/fisipgroup-mkdocs-documentation
 
 theme: 
+  logo: images/icon.ico
   name: material
+  primary: custom
+  accent: red
   features:
     - navigation.sections
     - search.suggest
@@ -13,15 +16,25 @@ theme:
   # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
+      primary: custom
+      accent: pink
       toggle:
-        icon: material/brightness-7
+        icon: material/toggle-switch
         name: Switch to dark mode
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
+      primary: custom
+      accent: pink
       toggle:
-        icon: material/brightness-4
+        icon: material/toggle-switch-off-outline
         name: Switch to light mode
+
+extra:
+  generator: false
+
+extra_css:
+  - stylesheets/extra.css
 
 markdown_extensions:
   - attr_list
@@ -30,31 +43,40 @@ markdown_extensions:
 
 nav: 
   - Home: index.md
+  
   - How to use MKDocs: mkdocs.md
-  - Guides:
+
+  - Development:
       - Links And References: base_help-links.md
       - How to publish:
         - Github: base_publish_github.md
         - Android: base_publish_android.md
         - IOS: base_publish_ios.md
       - How to install External Dependency Manager for Unity: base_how_to_edmfu.md
-  - Common Issues:
-    - Facebook SDK Integration: base_facebooksdk.md
+      - Common Issues:
+        - Facebook SDK Integration: base_facebooksdk.md
+  
   - Custom Packages:
     - Home: custompackage.md
     - Guides:
       - How to add package via git URL: custompackage_guide_giturl.md
       - How to add package via tarball: custompackage_guide_tarball.md
       - How to update package: custompackage_guide_update.md
-    # - Tools: custompackage_tools.md
     - Addressables:
       - Setup: custompackage_addressables_setup.md
       - How to Update Addressables: custompackage_addressables_update.md
       - Recommended Settings: custompackage_addressables_settings.md
       - Simulate In Editor: custompackage_addressables_simulate.md
+    # - Tools: custompackage_tools.md
     # - CloudSave: custompackage_cloudsave.md
-    # - Notifications: custompackage_notifications.md
+    - Notifications: 
+      - Setup: custompackage_notifications_setup.md
     # - AppUpdate: custompackage_appupdate.md
-  #- Games:
-   # - MowerMayhem: games_mowermayhem.md
+
+  - Games:
+    - MowerMayhem:
+      - GDD: games_mowermayhem_gdd.md
+      - Publish Checklist: games_mowermayhem_publish.md
+      - How to Develop Levels: games_mowermayhem_make_level.md
+
     #- Jump: games_jump.md

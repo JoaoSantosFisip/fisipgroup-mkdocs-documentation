@@ -2,6 +2,8 @@
 ## About
 Here's the documentation on how to publish an apk to the Apple's App Store. 
 
+Before starting make sure you follow the game's `Publish Checklist` section first.
+
 [App Store Connect Dashboard](https://appstoreconnect.apple.com)
 
 ## Requirements
@@ -53,3 +55,16 @@ Here's the documentation on how to publish an apk to the Apple's App Store.
     - You can now close the Xcode project.
 
 ## Release app on Apple Store
+1. Go to [App Store Connect Dashboard](https://appstoreconnect.apple.com).
+2. Go to `Apps`.
+3. Select the games app.
+4. Create a new version by pressing the `+` sign.
+![Button](images/base/publish/ios/publish_ios_13.png)
+5. Name the version and press `Create`.
+6. Scroll down to `What's New in This Version` and add the patch notes.
+    - For the release notes we usually go to gitkraken or trello and get a list of all the tasks done since last release. Only important on `production` releases.
+    ![Notes](images/base/publish/ios/publish_ios_14.png)
+7. Go to `Build ` and add the latest build.
+![Build](images/base/publish/ios/publish_ios_15.png)
+8. Select `Add for Review`.
+9. TODO: Check if another step appears 
