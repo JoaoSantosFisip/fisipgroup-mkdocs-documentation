@@ -11,5 +11,5 @@ The `Remote` load path is already set by the custom package scripts.
 ![Packet Assets](images/custompackage/addressables/custompackage_addressables_settings_2.png)
 
 ## Default Local Group
-These settings are also applicable to the other `AssetGroups`.
+These settings need to be aplied to the other `AssetGroups`.
 ![Default Local Group](images/custompackage/addressables/custompackage_addressables_settings_3.png)

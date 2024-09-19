@@ -21,5 +21,5 @@ They can be found here: [Recommended Settings](https://joaosantosfisip.github.io
 2. Add the necessary info.
     - All the ID's can be found on the `Cloud Content Delivery -> Buckets -> "Platform bucket" _> GUID's`.
     ![GUID's](images/custompackage/addressables/custompackage_addressables_setup_1.png)
-    - Make sure you are using the `ID's` from the correct release. You can find the others on the `Releases` section.
-3. Select `File -> Save` to make sure the changes are added.
+    - For the `Badge` value can be found on the `BADGES` section, copy and paste the name of the release badge you want to download assets from.
+3. Back to the Unity's `FisipGroup Addressables` window under `Tools` select `Save and Update` to make sure the profile remote URL is updated.
