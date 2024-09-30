@@ -2,6 +2,8 @@
 ## About
 Here's the documentation on how to publish an apk to the Google's Play Store. 
 
+Before starting make sure you follow the game's `Publish Checklist` section first.
+
 [Google Play Console Dashboard](https://play.google.com/console/u/2/developers/)
 
 ## Requirements

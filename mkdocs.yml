@@ -71,7 +71,11 @@ nav:
     # - CloudSave: custompackage_cloudsave.md
     - Notifications: 
       - Setup: custompackage_notifications_setup.md
-    # - AppUpdate: custompackage_appupdate.md
+    - AppUpdate: 
+      - About: custompackage_appupdate_about.md
+      - Setup: custompackage_appupdate_setup.md
+      - Tools: custompackage_appupdate_tools.md
+      - Major Updates: custompackage_appupdate_majorupdates.md
 
   - Games:
     - MowerMayhem:
