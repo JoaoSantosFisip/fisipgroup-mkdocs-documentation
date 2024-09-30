@@ -1,0 +1,2106 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../custompackage_appupdate_majorupdates/">
+      
+      
+        <link rel="next" href="../games_mowermayhem_publish/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
+    
+    
+      
+        <title>GDD - Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8c3ca2c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="pink">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mower-mayhem-game-design-document" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Documentation" class="md-header__button md-logo" aria-label="Documentation" data-md-component="logo">
+      
+  <img src="../images/icon.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              GDD
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="pink"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="pink"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/JoaoSantosFisip/fisipgroup-mkdocs-documentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Documentation" class="md-nav__button md-logo" aria-label="Documentation" data-md-component="logo">
+      
+  <img src="../images/icon.ico" alt="logo">
+
+    </a>
+    Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/JoaoSantosFisip/fisipgroup-mkdocs-documentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mkdocs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to use MKDocs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Development
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Development
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../base_help-links/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Links And References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    How to publish
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            How to publish
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../base_publish_github/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Github
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../base_publish_android/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Android
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../base_publish_ios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IOS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../base_how_to_edmfu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to install External Dependency Manager for Unity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Common Issues
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Common Issues
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../base_facebooksdk/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Facebook SDK Integration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Custom Packages
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Custom Packages
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custompackage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Guides
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custompackage_guide_giturl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to add package via git URL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custompackage_guide_tarball/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to add package via tarball
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custompackage_guide_update/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to update package
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Addressables
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Addressables
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custompackage_addressables_setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Setup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custompackage_addressables_update/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to Update Addressables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custompackage_addressables_settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recommended Settings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custompackage_addressables_simulate/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Simulate In Editor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Notifications
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Notifications
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custompackage_notifications_setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Setup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    AppUpdate
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            AppUpdate
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custompackage_appupdate_about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custompackage_appupdate_setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Setup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custompackage_appupdate_tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custompackage_appupdate_majorupdates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Major Updates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Games
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Games
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    MowerMayhem
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            MowerMayhem
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    GDD
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    GDD
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description-of-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description of Concept
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objective-and-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objective and Goals
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#game-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      Game Concept
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Game Concept">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#high-level-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      High-Level Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target-audience" class="md-nav__link">
+    <span class="md-ellipsis">
+      Target Audience
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inspirations-and-influence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inspirations and Influence
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#genre-and-setting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Genre And Setting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Genre And Setting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-and-world" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting and World
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gameplay-mechanics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gameplay Mechanics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gameplay Mechanics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-gameplay-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Gameplay Loop
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#player-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Player Objectives
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controls
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#progression-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Progression System
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#levels-and-challenges" class="md-nav__link">
+    <span class="md-ellipsis">
+      Levels and Challenges
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#characters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Characters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Characters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#playable-characters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Playable Characters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-playable-characters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Non-Playable Characters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Interface
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#art-and-visuals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Art and Visuals
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Level Design
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monetization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monetization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Monetization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#in-app-purchases" class="md-nav__link">
+    <span class="md-ellipsis">
+      In-App Purchases
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ads-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ads Strategy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#premium-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Premium Features
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technical Specifications
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical Specifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#target-platforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Target Platforms
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Target Devices
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../games_mowermayhem_publish/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publish Checklist
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../games_mowermayhem_make_level/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to Develop Levels
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description-of-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description of Concept
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objective-and-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objective and Goals
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#game-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      Game Concept
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Game Concept">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#high-level-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      High-Level Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target-audience" class="md-nav__link">
+    <span class="md-ellipsis">
+      Target Audience
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inspirations-and-influence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inspirations and Influence
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#genre-and-setting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Genre And Setting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Genre And Setting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-and-world" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting and World
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gameplay-mechanics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gameplay Mechanics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gameplay Mechanics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-gameplay-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Gameplay Loop
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#player-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Player Objectives
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controls
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#progression-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Progression System
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#levels-and-challenges" class="md-nav__link">
+    <span class="md-ellipsis">
+      Levels and Challenges
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#characters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Characters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Characters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#playable-characters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Playable Characters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-playable-characters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Non-Playable Characters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Interface
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#art-and-visuals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Art and Visuals
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Level Design
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monetization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monetization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Monetization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#in-app-purchases" class="md-nav__link">
+    <span class="md-ellipsis">
+      In-App Purchases
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ads-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ads Strategy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#premium-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Premium Features
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technical Specifications
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical Specifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#target-platforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Target Platforms
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Target Devices
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="mower-mayhem-game-design-document">MOWER MAYHEM Game Design Document</h1>
+<p><a href="https://docs.google.com/document/d/17fQRRZAxU0p46rq8_0EtXGiUOwAG26MZjd8QWxwoxSk/edit?usp=sharing">Google Docs</a></p>
+<h2 id="introduction">Introduction</h2>
+<h3 id="overview">Overview</h3>
+<p>Mower Mayhem is an immersive, action-packed game where players take on the role of a skilled landscaper battling against time, enemies, and obstacles to transform ordinary lawns into legendary masterpieces.</p>
+<h3 id="description-of-concept">Description of Concept</h3>
+<p>In the bustling world of [Game Title], players step into the shoes of a skilled landscaper with a mission to transform ordinary lawns into legendary masterpieces. The game introduces a dynamic blend of hyper-casual and action-packed gameplay, where the art of lawn mowing becomes a thrilling adventure.</p>
+<p>Embark on a journey across thematic worlds and real-world farms, each presenting unique challenges and obstacles. The core concept revolves around the player's ability to cut all the grass within a designated time frame while navigating through a variety of static obstacles and encountering mischievous enemies like moles, tractors (in later development), bees, and crows (also in later development).</p>
+<p>The gameplay loop involves selecting a level, attempting to complete it successfully, and earning coins that can be utilized to upgrade the lawnmower. As players progress through levels, they unlock new challenges and encounter escalating difficulty, ensuring a satisfying and competitive experience.</p>
+<p>The game's central objectives include mastering the art of precision lawn mowing, avoiding obstacles and enemy attacks, and strategically upgrading the lawnmower for enhanced performance. Collectables such as badges, coins, and health add an extra layer of engagement to the gameplay.</p>
+<p>[Game Title] sets itself apart with its unique selling points, delivering a perfect balance of competitiveness, visually stunning landscapes, and opportunities for character personalization. Drawing inspiration from iconic titles like Minecraft, Hill Climb Racing, and Breath of the Wild, the game promises not only a satisfying gameplay experience but also a visually immersive journey through diverse environments.</p>
+<p>Get ready to dive into the world of [Game Title], where every mow counts, and the race against time transforms mundane lawns into legendary turf triumphs.</p>
+<h3 id="objective-and-goals">Objective and Goals</h3>
+<p>Cut all grass within the time frame.
+Avoid obstacles/enemies attacks.
+Upgrade vehicle features.
+Collectables
+Badges (Leaderboards Token) - position on leaderboard based on total.
+Coins
+Health</p>
+<h2 id="game-concept">Game Concept</h2>
+<h3 id="high-level-overview">High-Level Overview</h3>
+<p>[Game Title] offers a unique blend of hyper-casual and action gameplay, challenging players to become the ultimate landscaper. With a focus on satisfying gameplay and competitive elements, the game combines amazing visuals with character personalization for an engaging experience. Inspired by titles like Minecraft, Hill Climb Racing, and Breath of the Wild, [Game Title] promises an exciting journey through thematic worlds and real-world farms.</p>
+<h3 id="target-audience">Target Audience</h3>
+<p>Plus Twelve. ( 12+ )
+Unique Selling Points
+Satisfying gameplay.
+Perfect amount of competitiveness.
+Amazing Visuals.
+Character personalization.</p>
+<h3 id="inspirations-and-influence">Inspirations and Influence</h3>
+<p>Minecraft - Sound design.
+Hill climb Racing - Upgrade system.
+Breath of the wild - Visual style.</p>
+<h2 id="genre-and-setting">Genre And Setting</h2>
+<p>Game Genre
+Hyper casual / Action </p>
+<h3 id="setting-and-world">Setting and World</h3>
+<p>Farms that compete in mowing competitions. Modern setting plus extra thematic worlds.</p>
+<p>Environment Settings:
+Real world farm.</p>
+<h2 id="gameplay-mechanics">Gameplay Mechanics</h2>
+<h3 id="core-gameplay-loop">Core Gameplay Loop</h3>
+<p>Select a level
+Try to complete the level
+Upgrade the lawnmower</p>
+<h3 id="player-objectives">Player Objectives</h3>
+<p>After entering a level, the player needs to cut all the grass from the level while trying to dodge obstacles and enemies. The level ends successfully when all grass is cut, or it fails if the player is hit by an obstacle or enemy. Grab Collectables. Upgrade vehicle.</p>
+<h3 id="controls">Controls</h3>
+<p>To control the main character, the player will use a touch analog.</p>
+<p>Vertical Screen</p>
+<h3 id="progression-system">Progression System</h3>
+<p>After completing a level successfully, the next level is unlocked.
+With the coins earned from the levels the player can upgrade their vehicle.</p>
+<h3 id="levels-and-challenges">Levels and Challenges</h3>
+<p>Every level will be unique and will have its set of challenges. The main challenge will be cutting all grass under a time limit while dodging enemy attack’s and obstacles.
+Static Obstacles:
+Rocks
+Tree
+Enemies:
+Mole
+Tractor [Later Development]
+Bees [Later Development]
+Crow [Later Development]</p>
+<h2 id="characters">Characters</h2>
+<h3 id="playable-characters">Playable Characters</h3>
+<p>[Add main character description here]</p>
+<h3 id="non-playable-characters">Non-Playable Characters</h3>
+<p>Enemies:
+Mole</p>
+<h2 id="user-interface">User Interface</h2>
+<p>Main Menu
+Start
+Garage/Store
+Settings
+Music
+Sound
+Unlock Ads
+Start&gt;Level Select
+Back Button
+Levels
+Brief level description
+Time to complete
+Highscores
+Loading
+Fisip Group Logo
+In game
+Countdown to start
+Joystick
+Vehicle Health
+Currency
+Time to Complete
+Pause
+Settings
+Quit
+Restart
+Win/Lose
+Time Finished/Game Over
+Currency Gained, unless lost
+Highscore Check?
+Extra Time, with Ads/Revive, with Ads
+Redo/Try again</p>
+<h2 id="art-and-visuals">Art and Visuals</h2>
+<p>Mix farming and racing elements, and have a UI to match.
+Audio and Music
+Music:
+Main menu
+Gameplay
+Audio:
+Menu button clicks
+Race begin.
+Race countdown
+Race end
+Grass cut</p>
+<h2 id="level-design">Level Design</h2>
+<p>Overview of Levels
+For the creation of the levels, a procedural level creation system will be created to help with development. 
+This system will be responsible in generating:
+Map layouts
+Obstacles
+Enemies
+Coins
+Decoration
+Grass
+Background
+Completion Time
+Save Level into file
+Load file into Level
+The system will also have certain parameters to set how a level should be generated:
+Size 
+Obstacles Frequency
+Enemies Frequency
+Coins Frequency
+Grass Frequency
+Level Progression
+Upon successfully completing a level within the designated time frame, players unlock the opportunity to progress to the next stage. Additionally, they have the option to re-do completed levels, either to amass additional in-game currency or to vie for top positions on the leaderboards.
+The accessibility of levels is facilitated through a user-friendly level select panel, enabling players to seamlessly navigate and choose their desired challenges.
+As players advance through the game, they will encounter escalating difficulty levels characterized by longer gameplay durations and more intricate obstacles, providing a progressively challenging and engaging experience.</p>
+<h2 id="monetization">Monetization</h2>
+<p>For monetization, we will use Unity’s In-App Purchasing Service, since It supports both the Apple App Store and Google Play Store.</p>
+<h3 id="in-app-purchases">In-App Purchases</h3>
+<p>Coins
+No advertising subscription.
+Limited time offer.</p>
+<h3 id="ads-strategy">Ads Strategy</h3>
+<p>Advertisement video at end of level.
+Watch video to get bonus coins.
+Watch video to earn 2x, 3X, 5X Coins</p>
+<h3 id="premium-features">Premium Features</h3>
+<p>Subscription to remove advertising.</p>
+<h2 id="technical-specifications">Technical Specifications</h2>
+<h3 id="target-platforms">Target Platforms</h3>
+<p>iOS
+Android</p>
+<h3 id="target-devices">Target Devices</h3>
+<p>Phone
+Tablet</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "search.suggest", "search.highlight", "content.code.annotation", "content.code.copy"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.525ec568.min.js"></script>
+      
+    
+  </body>
+</html>
